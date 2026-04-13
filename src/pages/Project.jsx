@@ -1,40 +1,50 @@
 import React from "react";
 import ProjectCard from "../components/ProjectCard";
-const projects = [
-    {
-        title: "Blog Platform",
-        description: "Markdown-based blog platform with SEO & dark mode.",
-        image: "/images/blog.png",
-        liveLink: "https://yourblog.com",
-        moreLink: "/projects/coming-soon",
-        tech: ["Next.js", "Tailwind", "MDX"],
-    },
-    {
-        title: "E-commerce Store",
-        description: "Full-featured store with payments & admin dashboard.",
-        image: "/images/e-commerce.png",
-        liveLink: "#",
-        moreLink: "/projects/coming-soon",
-        tech: ["Next.js", "Stripe", "MongoDB"],
-    },
-    {
-        title: "AI Job Tracker",
-        description:
-            "AI-powered job tracking platform with resume optimization & analytics.",
-        image: "/images/job.png",
-        liveLink: "#",
-        moreLink: "/projects/coming-soon",
-        tech: ["MERN", "Next.js", "OpenAI"],
-    },
-    {
-        title: "Dashboard App",
-        description: "Modern analytics dashboard with charts & filters.",
-        image: "/images/dashboard.png",
-        liveLink: "#",
-        moreLink: "/projects/coming-soon",
-        tech: ["React", "Chart.js", "Tailwind"],
-    },
-];
+import p1 from "../assets/p1.jpg";
+import p2 from "../assets/p2.jpg";
+import p3 from "../assets/p3.jpg";
+import p4 from "../assets/p4.jpg";
+const projects =[
+  {
+    "title": "SaaS AI Platform",
+    "image" : p1,
+    "description": "AI-powered SaaS platform with chatbot automation, secure authentication, and scalable backend architecture using Next.js and MongoDB.",
+    "tech_stack": ["Next.js", "TypeScript", "MongoDB", "JWT", "CI/CD"],
+    "highlights": ["AI Integration", "Scalable Architecture", "Authentication System"],
+    "github": "https://github.com/yourusername/saas-ai",
+    "live": "https://your-live-link.com"
+  },
+  {
+    "title": "AI Interviewer Agent",
+    "image" : p2,
+
+    "description": "Intelligent mock interview platform that generates dynamic questions and delivers real-time feedback using AI and MERN stack.",
+    "tech_stack": ["MongoDB", "Express.js", "React.js", "Node.js", "OpenAI API", "Docker"],
+    "highlights": ["AI-Based Feedback", "Dynamic Question Generation", "Dockerized App"],
+    "github": "https://github.com/yourusername/ai-interviewer",
+    "live": "https://your-live-link.com"
+  },
+  {
+    "title": "E-Commerce Platform",
+    "image" : p3,
+
+    "description": "Full-stack e-commerce application with secure authentication, product management, and smooth order processing workflow.",
+    "tech_stack": ["MongoDB", "Express.js", "React.js", "Node.js"],
+    "highlights": ["Authentication", "Cart & Orders", "Optimized Backend"],
+    "github": "https://github.com/yourusername/ecommerce",
+    "live": "https://your-live-link.com"
+  },
+  {
+    "title": "Learning Management System",
+    "image" : p4,
+
+    "description": "Robust LMS platform with role-based access, course management, and interactive learning features for scalable user engagement.",
+    "tech_stack": ["MongoDB", "Express.js", "React.js", "Node.js"],
+    "highlights": ["RBAC", "Course Management", "Scalable Design"],
+    "github": "https://github.com/yourusername/lms",
+    "live": "https://your-live-link.com"
+  }
+]
 
 const Project = () => {
     return (
@@ -47,8 +57,7 @@ const Project = () => {
                         Selected Work
                     </h2>
                     <p className="text-gray-400 leading-relaxed text-base max-w-xl">
-                        A collection of projects where I design and build scalable,
-                        high-performance applications with modern technologies.
+                       Real-world full-stack development projects
                     </p>
                 </div>
 
