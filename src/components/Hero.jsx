@@ -1,17 +1,12 @@
 import React from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope, FaXTwitter } from 'react-icons/fa6';
-import { FiExternalLink } from 'react-icons/fi';
-import { projects } from '../lib/projects';
 import { Link } from 'react-router-dom';
 
 function Hero() {
     return (
         <section className="relative bg-black text-white overflow-hidden">
-            {/* Background Glow */}
-            <div className="absolute inset-0 -z-10">
-                <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-amber-500/10 blur-[120px] rounded-full"></div>
-                <div className="absolute bottom-[-120px] right-[-100px] w-[300px] h-[300px] bg-purple-500/10 blur-[120px] rounded-full"></div>
-            </div>
+         
+         
 
             <div className="max-w-6xl mx-auto px-6 md:px-10 py-5 mt-12 flex flex-col md:flex-row items-center justify-between gap-12">
 
