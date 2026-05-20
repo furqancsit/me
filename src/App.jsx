@@ -1,47 +1,47 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import EducationSection from './components/EducationSection'
-import Project from './pages/Project'
-import TechStack from './components/TechStack'
-import ContactPage from './pages/ContactPage'
-import Footer from './components/Footer'
+
+import React from "react";
+
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Project from "./pages/Project";
+import About from "./components/About";
+
+import Contact from "./pages/ContactPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-black text-white min-h-screen">
-      <Router>
-            <Navbar />
+    <main className="bg-[#050505] text-white overflow-hidden">
 
-        <div className="max-w-6xl mx-auto  space-y-12 py-6">
+      {/* navbar */}
+      <Navbar />
 
-          <Routes>
-            {/* Home Page */}
-            <Route
-              path="/"
-              element={
-                <>
-                  <Hero />
-                  <Project />
-                  <TechStack />
-                  <EducationSection />
-                  <ContactPage />
-                </>
-              }
-            />
+      {/* hero */}
+      <section id="home">
+        <Hero />
+      </section>
 
-            {/* Projects Page */}
-            <Route path="/projects" element={<Project />} />
-            <Route path="/contactme" element={<ContactPage />} />
-          </Routes>
+      {/* projects */}
+      <section id="projects">
+        <Project />
+      </section>
 
-        </div>
-        <Footer/>
-      </Router>
-    </div>
-  )
+      {/* about */}
+      <section id="about">
+        <About />
+      </section>
+
+      {/* contact */}
+      <section id="contact">
+        <Contact />
+      </section>
+
+      {/* footer */}
+      <Footer />
+
+    </main>
+  );
 }
 
-export default App
+export default App;

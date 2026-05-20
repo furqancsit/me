@@ -1,59 +1,215 @@
-import { Link } from "react-router-dom";
-import { FiExternalLink } from "react-icons/fi";
+// import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+
+// const ProjectCard = ({
+//   title,
+//   description,
+//   image,
+//   tech_stack,
+//   live,
+//   index,
+// }) => {
+//   return (
+//     <a
+//       href={live}
+//       target="_blank"
+//       rel="noreferrer"
+//       className="block group"
+//     >
+//       <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#0b0b0b]">
+
+//         {/* IMAGE */}
+//         <div className="relative h-[420px] sm:h-[520px] overflow-hidden">
+
+//           <img
+//             src={image}
+//             alt={title}
+//             className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"
+//           />
+
+//           {/* cinematic overlay */}
+//           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+
+//           {/* top floating number */}
+//           <div className="absolute top-4 left-4 backdrop-blur-xl bg-black/40 border border-white/10 px-4 py-2 rounded-full">
+
+//             <span className="text-xs text-zinc-300 tracking-widest">
+//               PROJECT 0{index + 1}
+//             </span>
+
+//           </div>
+
+//           {/* floating bottom card */}
+//           <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+
+//             <div className="rounded-[28px] border border-white/10 bg-black/40 backdrop-blur-2xl p-5 sm:p-6">
+
+//               {/* title row */}
+//               <div className="flex items-start justify-between gap-4">
+
+//                 <div>
+
+//                   <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight leading-none">
+//                     {title}
+//                   </h3>
+
+//                   <p className="mt-3 text-zinc-400 text-sm sm:text-[15px] leading-relaxed max-w-md">
+//                     {description}
+//                   </p>
+//                 </div>
+
+//                 <div className="shrink-0 w-11 h-11 rounded-2xl bg-white text-black flex items-center justify-center group-hover:rotate-12 transition duration-300">
+
+//                   <FaArrowUpRightFromSquare />
+
+//                 </div>
+//               </div>
+
+//               {/* tags */}
+//               <div className="mt-6 flex flex-wrap gap-2">
+
+//                 {tech_stack.map((tech, i) => (
+//                   <span
+//                     key={i}
+//                     className="px-3 py-1.5 rounded-full bg-white/10 text-xs text-zinc-200 border border-white/10"
+//                   >
+//                     {tech}
+//                   </span>
+//                 ))}
+
+//               </div>
+
+//             </div>
+
+//           </div>
+//         </div>
+//       </div>
+//     </a>
+//   );
+// };
+
+// export default ProjectCard;
+
+// ProjectCard.jsx
+
+import {
+  FaArrowUpRightFromSquare,
+  FaGithub,
+} from "react-icons/fa6";
 
 const ProjectCard = ({
   title,
   description,
   image,
-  highlights,
-  github,
+  tech_stack,
   live,
-  tech_stack = [],
+  github,
+  category,
 }) => {
   return (
-    <div
-      onClick={() => window.open(live, "_blank")}
-      className="cursor-pointer group relative bg-neutral-900/60 border border-white/5 rounded-2xl overflow-hidden backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-amber-400/40"
-    >
-      <div className="relative w-full h-52 overflow-hidden">
+    <div className="group overflow-hidden rounded-3xl border border-white/10 bg-[#0b0b0b]">
+
+      {/* IMAGE */}
+      <div className="relative h-[360px] sm:h-[500px] overflow-hidden">
+
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover scale-100 group-hover:scale-105 transition duration-500"
+          className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
         />
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition" />
-      </div>
 
-      <div className="p-5 space-y-4">
-        <h3 className="text-lg font-semibold text-white group-hover:text-amber-400 transition">
-          {title}
-        </h3>
+        {/* overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
-        <p className="text-sm text-gray-400 leading-relaxed line-clamp-3">
-          {description}
-        </p>
+        {/* category */}
+        <div className="absolute top-4 left-4 rounded-full border border-white/10 bg-black/40 px-4 py-2 backdrop-blur-xl">
 
-        <div className="flex flex-wrap gap-2">
-          {tech_stack.map((item, i) => (
-            <span key={i} className="text-xs px-2 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">
-              {item}
-            </span>
-          ))}
+          <span className="text-[11px] uppercase tracking-[0.2em] text-zinc-300">
+            {category}
+          </span>
+
         </div>
 
-        {github && (
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-amber-400 hover:underline"
-            onClick={(e) => e.stopPropagation()}
-          >
-            source code →
-          </a>
-        )}
+        {/* content */}
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+
+          <div className="rounded-3xl border border-white/10 bg-black/40 p-5 backdrop-blur-2xl sm:p-6">
+
+            {/* top row */}
+            <div className="flex items-start justify-between gap-4">
+
+              <div>
+
+                <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+                  {title}
+                </h3>
+
+                <p className="mt-3 max-w-xl text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
+                  {description}
+                </p>
+
+              </div>
+
+              {/* live icon */}
+              <a
+                href={live}
+                target="_blank"
+                rel="noreferrer"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-black transition duration-300 group-hover:rotate-6"
+              >
+                <FaArrowUpRightFromSquare size={15} />
+              </a>
+
+            </div>
+
+            {/* bottom row */}
+            <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+
+              {/* tech stack */}
+              <div className="flex flex-wrap gap-2">
+
+                {tech_stack.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-xs text-zinc-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
+
+              </div>
+
+              {/* actions */}
+              <div className="flex items-center gap-3">
+
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex h-10 items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 text-sm text-zinc-300 transition hover:bg-white/[0.06] hover:text-white"
+                >
+                  <FaGithub size={14} />
+                  GitHub
+                </a>
+
+                <a
+                  href={live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex h-10 items-center rounded-xl bg-white px-4 text-sm font-medium text-black transition hover:bg-zinc-200"
+                >
+                  Live Demo
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
   );
 };
+
 export default ProjectCard;
