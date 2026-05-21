@@ -6,73 +6,127 @@ import {
 
 const ContactPage = () => {
   return (
-    <section className="bg-[#050505] text-white py-6 px-6">
-      <div className="max-w-6xl mx-auto md:px-4">
+    <section className="relative overflow-hidden bg-[#050505] text-white py-28 sm:py-36 px-6">
 
-        <div className="">
+      {/* ambient background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-white/[0.03] blur-3xl rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-zinc-800/20 blur-3xl rounded-full" />
+      </div>
 
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-16">
+      <div className="max-w-6xl mx-auto md:px-5">
 
-            {/* left */}
-            <div className="max-w-3xl">
+        <div className="flex flex-col gap-16 lg:grid lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
 
-              <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
-                Contact
-              </p>
+          {/* left */}
+          <div>
 
-              <h2 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
-                Let’s build modern web products together.
-              </h2>
+            <p className="text-xs uppercase tracking-[0.3em] text-zinc-500 mb-8">
+              Contact
+            </p>
 
-              <p className="mt-8 text-zinc-400 text-[15px] leading-relaxed max-w-xl">
-                Open to full-time opportunities, collaborative projects, and modern full-stack engineering roles focused on building scalable web applications.
-              </p>
+            <h2 className="max-w-4xl text-4xl sm:text-6xl md:text-7xl font-semibold tracking-[-0.04em] leading-[0.95]">
+              Designing and building high-performance digital products for modern brands.
+            </h2>
 
-            </div>
+            <p className="mt-10 max-w-xl text-zinc-400 text-[15px] sm:text-base leading-relaxed">
+              Available for full-time roles, selected freelance projects,
+              and product-focused frontend engineering opportunities.
+            </p>
 
-            {/* right */}
-            <div className="lg:text-right flex flex-col items-center  lg:justify-end">
+          </div>
 
-              <a
-                href="mailto:a.furqan.codes@gmail.com"
-                className="inline-flex items-center justify-center rounded-2xl bg-white text-black px-7 h-14 text-sm font-medium hover:bg-zinc-200 transition-all duration-300"
-              >
+          {/* right */}
+          <div className="flex flex-col items-start lg:items-end gap-8">
+
+            {/* CTA */}
+            <a
+              href="mailto:a.furqan.codes@gmail.com"
+              className="
+                group
+                relative
+                inline-flex
+                items-center
+                justify-center
+                overflow-hidden
+                rounded-2xl
+                border
+                border-white/10
+                bg-white
+                px-7
+                h-14
+                text-sm
+                font-medium
+                text-black
+                transition-all
+                duration-500
+                ease-out
+                hover:-translate-y-1
+                hover:shadow-[0_0_40px_rgba(255,255,255,0.12)]
+              "
+            >
+              <span className="relative z-10">
                 a.furqan.codes@gmail.com
-              </a>
+              </span>
 
-              <div className="mt-10 flex items-center gap-3 lg:justify-end">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-b from-white to-zinc-200" />
+            </a>
 
+            {/* socials */}
+            <div className="flex items-center gap-4">
+
+              {[
+                {
+                  icon: <FaGithub size={18} />,
+                  href: "https://github.com/furqancsit",
+                },
+                {
+                  icon: <FaLinkedin size={18} />,
+                  href: "https://www.linkedin.com/in/abdul-furqan-af/",
+                },
+                {
+                  icon: <FaXTwitter size={18} />,
+                  href: "#",
+                },
+              ].map((item, i) => (
                 <a
-                  href="https://github.com/furqancsit"
+                  key={i}
+                  href={item.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-12 h-12 rounded-2xl border border-white/10 bg-white/[0.03] flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/[0.06] transition-all duration-300"
+                  className="
+                    group
+                    relative
+                    flex
+                    items-center
+                    justify-center
+                    w-12
+                    h-12
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-white/[0.03]
+                    backdrop-blur-xl
+                    text-zinc-500
+                    transition-all
+                    duration-500
+                    ease-out
+                    hover:-translate-y-1
+                    hover:border-white/20
+                    hover:bg-white/[0.05]
+                    hover:text-white
+                  "
                 >
-                  <FaGithub size={18} />
+                  {item.icon}
                 </a>
+              ))}
 
-                <a
-                  href="https://www.linkedin.com/in/abdul-furqan-af/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-12 h-12 rounded-2xl border border-white/10 bg-white/[0.03] flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/[0.06] transition-all duration-300"
-                >
-                  <FaLinkedin size={18} />
-                </a>
-
-                <a
-                  href="#"
-                  className="w-12 h-12 rounded-2xl border border-white/10 bg-white/[0.03] flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/[0.06] transition-all duration-300"
-                >
-                  <FaXTwitter size={18} />
-                </a>
-
-              </div>
             </div>
 
           </div>
 
         </div>
+
       </div>
     </section>
   );
