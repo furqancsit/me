@@ -62,35 +62,76 @@ const projects = [
   },
 ];
 
+// const Project = () => {
+//   return (
+//     <section
+//       id="projects"
+//       className="bg-[#050505] text-white py-24 md:py-32 px-5"
+//     >
+//       <div className="max-w-6xl mx-auto md:px-4">
+//         {/* heading */}
+//         <div className="mb-14">
+//           <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
+//             Portfolio
+//           </p>
+
+//           <h2 className="mt-4 text-4xl sm:text-5xl font-semibold tracking-tight">
+//             Selected Work
+//           </h2>
+
+//           <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-zinc-400">
+//             A selection of full-stack applications focused on modern UI,
+//             scalable architecture, and real-world product development.
+//           </p>
+//         </div>
+
+//         {/* projects */}
+//         <div className="space-y-6 ">
+//           {projects.map((project, index) => (
+//             <ProjectCard key={index} {...project} />
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Project;
+
+
+
+
 const Project = () => {
   return (
-    <section
-      id="projects"
-      className="bg-[#050505] text-white py-24 md:py-32 px-5"
-    >
-      <div className="max-w-6xl mx-auto md:px-4">
-        {/* heading */}
-        <div className="mb-14">
-          <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
-            Portfolio
-          </p>
+  <section
+  id="projects"
+  className="bg-[#050505] px-4 py-10 text-white sm:px-6 md:py-20"
+>
+      <div className="mx-auto max-w-5xl md:px-4 px-2">
 
-          <h2 className="mt-4 text-4xl sm:text-5xl font-semibold tracking-tight">
-            Selected Work
+        {/* HEADER */}
+        <div className="mb-10">
+      
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+          Built & shipped
           </h2>
 
-          <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-zinc-400">
-            A selection of full-stack applications focused on modern UI,
-            scalable architecture, and real-world product development.
-          </p>
+        
         </div>
 
-        {/* projects */}
-        <div className="space-y-6">
+        {/* DIVIDER */}
+        <div className="mb-6 h-px bg-white/[0.08]" />
+
+        {/* PROJECTS */}
+        <div className="grid gap-5 md:grid-cols-2">
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <ProjectCard
+              key={index}
+              {...project}
+            />
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -1,148 +1,158 @@
-import React from "react";
-import {
-  FaGithub,
-  FaLinkedin,
-} from "react-icons/fa6";
 
-import { HiOutlineMenuAlt4, HiX } from "react-icons/hi";
-import {
-  HiOutlineHome,
-  HiOutlineUser,
-  HiOutlineFolder,
-} from "react-icons/hi2";
 
-import { FiFileText } from "react-icons/fi";
-
-import { Link } from "react-router-dom";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const Navbar = () => {
   return (
     <>
-      {/* DESKTOP NAV */}
-      <header className="hidden md:block fixed top-5 left-0 right-0 z-50">
-        <div className="max-w-[1180px] mx-auto px-5">
+      {/* ================= DESKTOP NAV ================= */}
+      <header className="fixed left-0 right-0 top-4 z-50 hidden md:block">
+        <div className="mx-auto max-w-5xl ">
 
-          <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 backdrop-blur-2xl px-5 py-4">
+          <nav className="flex h-16 items-center justify-between rounded-2xl border border-white/[0.08] bg-[#080808]/75 px-4 shadow-2xl shadow-black/20 backdrop-blur-2xl">
 
-            {/* logo */}
+            {/* LOGO */}
             <a
               href="#home"
-              className="text-lg font-semibold tracking-tight text-white"
+              className="group flex items-center gap-2"
             >
-              Abdul<span className="text-zinc-500">Furqan</span>
-            </a>
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-xs font-bold text-black transition-transform duration-300 group-hover:rotate-3">
+                AF
+              </span>
 
-            {/* nav */}
-            <div className="flex items-center gap-6 text-sm text-zinc-400">
-
-              <a
-                href="#projects"
-                className="hover:text-white transition"
-              >
-                Projects
-              </a>
-
-              <a
-                href="#about"
-                className="hover:text-white transition"
-              >
-                About
-              </a>
-
-              <a
-                href="#contact"
-                className="hover:text-white transition"
-              >
-                Contact
-              </a>
-
-            </div>
-
-            {/* right */}
-            <div className="flex items-center gap-3">
-
-              <a
-                href="https://github.com/furqancsit"
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.03] flex items-center justify-center text-zinc-400 hover:text-white transition"
-              >
-                <FaGithub />
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/abdul-furqan-af/"
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.03] flex items-center justify-center text-zinc-400 hover:text-white transition"
-              >
-                <FaLinkedin />
-              </a>
-
-              <a
-                href="/finalresume.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="h-10 px-5 rounded-xl bg-white text-black text-sm font-medium flex items-center hover:bg-zinc-200 transition"
-              >
-                Resume
-              </a>
-
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* MOBILE NAV */}
-      {/* MOBILE NAV */}
-      <div className="md:hidden fixed top-4 inset-x-0 z-50">
-
-        <div className="max-w-6xl mx-auto px-5">
-
-          <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl px-3 py-3">
-
-            {/* logo */}
-            <a
-              href="#home"
-              className="text-sm font-semibold tracking-tight text-white"
-            >
-              Abdul
-              <span className="text-zinc-500">
-                Furqan
+              <span className="text-[15px] font-semibold tracking-tight text-white">
+                Abdul
+                <span className="text-zinc-500"> Furqan</span>
               </span>
             </a>
 
-            {/* links */}
-            <div className="flex items-center gap-1">
+            {/* NAV LINKS */}
+            <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-xl border border-white/[0.06] bg-white/[0.02] p-1">
+
+              <a
+                href="#home"
+                className="rounded-lg px-4 py-2 text-xs font-medium text-zinc-400 transition-all duration-300 hover:bg-white/[0.07] hover:text-white"
+              >
+                Home
+              </a>
 
               <a
                 href="#projects"
-                className="rounded-full px-3 py-2 text-sm text-zinc-300 transition hover:bg-white/10 hover:text-white"
+                className="rounded-lg px-4 py-2 text-xs font-medium text-zinc-400 transition-all duration-300 hover:bg-white/[0.07] hover:text-white"
               >
                 Work
               </a>
 
               <a
                 href="#about"
-                className="rounded-full px-3 py-2 text-sm text-zinc-300 transition hover:bg-white/10 hover:text-white"
+                className="rounded-lg px-4 py-2 text-xs font-medium text-zinc-400 transition-all duration-300 hover:bg-white/[0.07] hover:text-white"
               >
                 About
               </a>
 
               <a
-                href="/finalresume.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="ml-1 rounded-full bg-white px-4 py-2 text-sm font-medium text-black transition hover:bg-zinc-200"
+                href="#contact"
+                className="rounded-lg px-4 py-2 text-xs font-medium text-zinc-400 transition-all duration-300 hover:bg-white/[0.07] hover:text-white"
               >
-                Resume
+                Contact
               </a>
 
             </div>
 
-          </div>
+            {/* RIGHT ACTIONS */}
+            <div className="flex items-center gap-2">
+
+              {/* GitHub */}
+              <a
+                href="https://github.com/furqancsit"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.07] bg-white/[0.025] text-zinc-400 transition-all duration-300 hover:border-white/[0.15] hover:bg-white/[0.07] hover:text-white"
+              >
+                <FaGithub size={15} />
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/abdul-furqan-af/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.07] bg-white/[0.025] text-zinc-400 transition-all duration-300 hover:border-white/[0.15] hover:bg-white/[0.07] hover:text-white"
+              >
+                <FaLinkedin size={15} />
+              </a>
+
+              {/* Resume */}
+              <a
+                href="/finalresume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="ml-1 flex h-9 items-center gap-1.5 rounded-xl bg-white px-4 text-xs font-semibold text-black transition-all duration-300 hover:bg-zinc-200"
+              >
+                Resume
+                <FiArrowUpRight size={13} />
+              </a>
+
+            </div>
+          </nav>
         </div>
-      </div>
+      </header>
+
+
+      {/* ================= MOBILE NAV ================= */}
+      <header className="fixed left-0 right-0 top-3 z-50 px-4 md:hidden">
+
+        <nav className="flex h-14 items-center justify-between rounded-2xl border border-white/[0.08] bg-[#080808]/80 px-3 shadow-2xl shadow-black/30 backdrop-blur-2xl">
+
+          {/* LOGO */}
+          <a
+            href="#home"
+            className="flex items-center gap-2"
+          >
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[10px] font-bold text-black">
+              AF
+            </span>
+
+            <span className="text-sm font-semibold tracking-tight text-white">
+              Abdul
+              <span className="text-zinc-500"> Furqan</span>
+            </span>
+          </a>
+
+          {/* MOBILE LINKS */}
+          <div className="flex items-center gap-1">
+
+            <a
+              href="#projects"
+              className="rounded-xl px-3 py-2 text-xs font-medium text-zinc-400 transition-colors hover:bg-white/[0.07] hover:text-white"
+            >
+              Work
+            </a>
+
+            <a
+              href="#about"
+              className="rounded-xl px-3 py-2 text-xs font-medium text-zinc-400 transition-colors hover:bg-white/[0.07] hover:text-white"
+            >
+              About
+            </a>
+
+            <a
+              href="/finalresume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="ml-1 flex items-center gap-1 rounded-xl bg-white px-3.5 py-2 text-xs font-semibold text-black transition-colors hover:bg-zinc-200"
+            >
+              Resume
+              <FiArrowUpRight size={12} />
+            </a>
+
+          </div>
+
+        </nav>
+      </header>
     </>
   );
 };
